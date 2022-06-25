@@ -24,17 +24,18 @@ void myRead()
     {
         fscanf(fin, "%f",&angle[i]);
     }
+    glutPostRedisplay();
 }
 
 void keyboard(unsigned char key,int x,int y)
 {
     if(key=='r') myRead();
     if(key=='s') myWrite();///save
-    if(key=='0') angleID=0;///¹w³]³o¤@­Ó
+    if(key=='0') angleID=0;///é è¨­é€™ä¸€å€‹
     if(key=='1') angleID=1;
     if(key=='2') angleID=2;
     if(key=='3') angleID=3;
-}///¥Îkeyboardªº«öÁä¡A¨M©wµ¥¤@¤U
+}///ç”¨keyboardçš„æŒ‰éµï¼Œæ±ºå®šç­‰ä¸€ä¸‹
 
 void mouse(int button,int state, int x,int y)
 {
@@ -50,38 +51,38 @@ void motion(int x,int y)
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3f(1,1,1);///¥Õ¦âªº
-    glRectf(0.3, 0.5, -0.3, -0.2);///¨­Åé
-    ///¥k¤â
+    glColor3f(1,1,1);///ç™½è‰²çš„
+    glRectf(0.3, 0.5, -0.3, -0.2);///èº«é«”
+    ///å³æ‰‹
     glPushMatrix();
-        glTranslatef(0.3,0.5,0);///±¾¦b0.5 0.5
+        glTranslatef(0.3,0.5,0);///æ›åœ¨0.5 0.5
         glRotatef(angle[0],0,0,1);
-        glTranslatef( -0.3, -0.4, 0);///±ÛÂà¤¤¤ß©ñ¨ì¥¿¤¤¤ß
-        glColor3f(1,0,0);///¬õ¦âªº
-        glRectf(0.3, 0.5, 0.8, 0.3);///¤âÁu
+        glTranslatef( -0.3, -0.4, 0);///æ—‹è½‰ä¸­å¿ƒæ”¾åˆ°æ­£ä¸­å¿ƒ
+        glColor3f(1,0,0);///ç´…è‰²çš„
+        glRectf(0.3, 0.5, 0.8, 0.3);///æ‰‹è‡‚
 
         glPushMatrix();
-            glTranslatef(0.8,0.4,0);///(3)§â¤U¤â¨y±¾¦bÃö¸`¤W
-            glRotatef(angle[1],0,0,1);///(2)±ÛÂà
-            glTranslatef(-0.8,-0.4,0);///¦Aµe¤U¤â¨y///(1)§â¤U¤â¨yªº±ÛÂà¤¤¤ß¡A©ñ¦b¥¿¤¤¤ß
-            glColor3f(0,1,0);///ºñ¦â
+            glTranslatef(0.8,0.4,0);///(3)æŠŠä¸‹æ‰‹è‚˜æ›åœ¨é—œç¯€ä¸Š
+            glRotatef(angle[1],0,0,1);///(2)æ—‹è½‰
+            glTranslatef(-0.8,-0.4,0);///å†ç•«ä¸‹æ‰‹è‚˜///(1)æŠŠä¸‹æ‰‹è‚˜çš„æ—‹è½‰ä¸­å¿ƒï¼Œæ”¾åœ¨æ­£ä¸­å¿ƒ
+            glColor3f(0,1,0);///ç¶ è‰²
             glRectf(0.8,0.5,1.1,0.3);
         glPopMatrix();
 
     glPopMatrix();
-    ///¥ª¤â (§âXªº®y¼Ğ³£­¼¤W°Æ¸¹¡A¥HY®y¼Ğ¬°¹ïºÙ¶b )
+    ///å·¦æ‰‹ (æŠŠXçš„åº§æ¨™éƒ½ä¹˜ä¸Šå‰¯è™Ÿï¼Œä»¥Yåº§æ¨™ç‚ºå°ç¨±è»¸ )
     glPushMatrix();
-        glTranslatef(-0.3,0.5,0);///±¾¦b0.5 0.5
+        glTranslatef(-0.3,0.5,0);///æ›åœ¨0.5 0.5
         glRotatef(angle[2],0,0,1);
-        glTranslatef( 0.3,-0.4, 0);///±ÛÂà¤¤¤ß©ñ¨ì¥¿¤¤¤ß
-        glColor3f(1,0,0);///¬õ¦âªº
-        glRectf(-0.3, 0.5,-0.8, 0.3);///¤âÁu
+        glTranslatef( 0.3,-0.4, 0);///æ—‹è½‰ä¸­å¿ƒæ”¾åˆ°æ­£ä¸­å¿ƒ
+        glColor3f(1,0,0);///ç´…è‰²çš„
+        glRectf(-0.3, 0.5,-0.8, 0.3);///æ‰‹è‡‚
 
         glPushMatrix();
-            glTranslatef(-0.8,0.4,0);///(3)§â¤U¤â¨y±¾¦bÃö¸`¤W
-            glRotatef(angle[3],0,0,1);///(2)±ÛÂà
-            glTranslatef(0.8,-0.4,0);///¦Aµe¤U¤â¨y///(1)§â¤U¤â¨yªº±ÛÂà¤¤¤ß¡A©ñ¦b¥¿¤¤¤ß
-            glColor3f(0,1,0);///ºñ¦â
+            glTranslatef(-0.8,0.4,0);///(3)æŠŠä¸‹æ‰‹è‚˜æ›åœ¨é—œç¯€ä¸Š
+            glRotatef(angle[3],0,0,1);///(2)æ—‹è½‰
+            glTranslatef(0.8,-0.4,0);///å†ç•«ä¸‹æ‰‹è‚˜///(1)æŠŠä¸‹æ‰‹è‚˜çš„æ—‹è½‰ä¸­å¿ƒï¼Œæ”¾åœ¨æ­£ä¸­å¿ƒ
+            glColor3f(0,1,0);///ç¶ è‰²
             glRectf(-0.8,0.5,-1.1,0.3);
         glPopMatrix();
 
